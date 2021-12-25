@@ -1,0 +1,184 @@
+{% load static%}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Transcript</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;  
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+            .transcript{
+                display:flex;
+                min-height:100vh;
+            }
+            .transcript-header{
+                display:flex;
+                flex-direction:row;
+                justify-content:space-between;
+                padding:20px;
+                width:100%;
+                height:auto;
+                margin:0 auto;
+                border-bottom:2px solid gray;
+            }
+            .campuslogo{}
+            .college-name{}
+            .transcript-header2{
+                display:flex;
+                flex-direction:row;
+                justify-content:space-between;
+                padding:20px;
+                width:100%;
+                height:auto;
+                margin:0 auto;
+              }
+            .transcript-header2-element{
+            flex:1;
+            }
+            .table{
+                width:auto;
+                min-height: 100vh;
+            }
+            .table1{
+              
+            }
+            .table1 table{
+                padding-top:6px;
+                padding-left:10px;
+            }
+            .table2{
+                margin-top:20px;
+            }
+            .table2 table *{
+                width:100%;
+                padding-top:10px;
+                text-transform: uppercase;
+            }
+            .table3{}
+             .footer{background:white}
+        </style>
+    </head>
+    <body>
+        
+    <!--<div class='wrapper'>
+            <div class='header'>
+                <p class='title'>Invoice # {{invoice_id}}</p>
+            </div>
+        <div>
+        <div class='details'>
+            Bill to:{{customer_name}} <br/>
+            Amount: {{ amount }} <br/>
+            Date: {{date}}
+            <hr class='hrItem' />
+        </div>
+    </div>-->
+    <div class='transcript'>
+        <div class='transcript-header'>
+            <div class="campus-logo">
+                <img src="{% static '/images/logoforur.jpg' %}" height="150" width="150" alt=" log for UR">
+            </div>
+            <div class="college-name">
+                <h3 style="float:left;">College of Science and Technology</h3>
+            </div>
+        </div>
+        <div class='transcript-header2'>
+           <div class="transcript-header2-element">
+           <h3>School Of ICT</h3>
+           <h3 style='text-transform:uppercase;'>Department of COMPUTER SCIENCE</h3>
+           <h3 style="margin-top:40px">PROVISIONAL STATEMENT OF RESULTS</h3>
+           </div>
+           <div class="transcript-header2-element">
+            <img src="{% static 'images/IMG-20171231-WA0020.jpg' %}" alt="">
+           </div>
+        </div>
+        <div class="tables">
+            <div class="table1">
+              <table border="1" cellspacing="0" cellpadding="0">
+                  <thead>
+                    <tr>
+                        <th>Names</th>
+                        <th>Registration number</th>
+                        <th>Date of Birth</th>
+                        <th>Statement number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Uwineza Joseph</td>
+                        <td>218000597</td>
+                        <td>1-Jan-1997</td>
+                        <td>CS/019/0014</td>
+                    </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="table2">
+               <table border="1" cellspacing="0" cellpadding="0">
+                   <thead>
+                       <tr>
+                           <th>Third year</th>
+                           <th>2019-2020</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <td>FIRST TRIMESTER</td>
+                           <td>SECOND TRIMESTER</td>
+                       </tr>
+                   </tbody>
+               </table>
+               <table border="1" id="table-transcript">
+                   <thead>
+                       <tr>
+                           <th>MODULE CODE AND NAME</th>
+                           <th>CREDIT</th>
+                           <th>MARKS</th>
+                           <th>GRADE</th>
+                           <th>MODULE CODE AND NAME</th>
+                           <th>CREDIT</th>
+                           <th>MARKS</th>
+                           <th>GRADE</th>
+                       </tr>
+                   </thead>
+               </table>
+            </div>
+            <div class="table3">
+
+            </div>
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+    
+    </body>
+</html>

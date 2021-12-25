@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+</head>
+<style>
+    .container{
+      
+    }
+    h1{
+        background-color:#277798;
+        color:#fff;
+    }
+    body{
+        background-color: #FFF;
+    }
+</style>
+<body>
+    <div>
+        <h1><center>Personal Information</center></h1>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <form action="">
+                    <div class="row">
+                      <div class="col-4">
+                        <input type="text" class="form-control" placeholder="First name">
+                      </div>
+                      <div class="col-4">
+                        <input type="email" class="form-control" placeholder="Email">
+                      </div>
+                     </div>
+                     &nbsp;
+                     <div class="row">
+                        <div class="col-4">
+                          <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+                        <div class="col-4">
+                          <input type="text" class="form-control" placeholder="Registration Number" value="{{rand}}" disabled>
+                        </div>
+                       </div>
+                       &nbsp;
+                       <div class="row">
+                        <div class="col-4">
+                          <input type="file" class="form-control" placeholder="Image profile">
+                        </div>
+               
+                        <div class="col-4">
+                          <input type="text" class="form-control" placeholder="National Id">
+                        </div>
+                       </div>
+                       Gender:
+                       <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                        <label class="form-check-label" for="inlineRadio1">Male</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                      </div>
+                      &nbsp;
+                       <div class="row">
+                        <div class="col-4">
+                            <input type="" class="form-control" placeholder="Academic Year">
+                        </div>
+                        <div class="col-4">
+                          <input type="date" class="form-control" placeholder="Date of birth">
+                        </div>
+                       </div>
+                       &nbsp;
+                       <center><input class="btn btn-primary" type="submit" value="Submit"></center>
+               </form>
+
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        
+    </div>
+</body>
+</html>

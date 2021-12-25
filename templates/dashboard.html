@@ -1,0 +1,536 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Dashboard eDocuments</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="{% static 'dashboard/img/mdb-favicon.ico' %}" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="{% static 'dashboard/css/mdb.min.css' %}" />
+  </head>
+  <body>
+    <!-- Start your project here-->
+    <div class="container-fluid">
+     <div class="row">
+        <div class="col-sm-3 bg-info">
+          <!-- navbar for left side -->
+              
+              <h1 class="text-dark py-2">E-Documents</h1>
+              <hr>
+          <table class="table table-hover table-borderless table-sm">
+            <thead>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                 <a data-mdb-toggle="collapse" href="#collapseExample" class="text-white" aria-expanded="false" aria-controls="collapseExample"> Personal Informations</a>
+                  <!-- Collapsed content -->
+                  <div class="collapse mt-3" id="collapseExample">
+                    <ul class="list-group list-group-flush ">
+                      <li class="list-group-item bg-light">
+                        <a href="" data-mdb-toggle="modal" data-mdb-target="#exampleSideModal2" >View Personal Info</a>
+                      </li>
+                      <li class="list-group-item">
+                        <a href="" data-mdb-toggle="modal" data-mdb-target="#exampleSideModal1">Update Personal Info</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- End Collapsed content -->
+                </td>
+              </tr>
+              <tr>
+                <td><a href="#" data-mdb-toggle="modal" data-mdb-target="#exampleSideModal3" class="text-white">Transcript</a></td>
+              </tr>
+
+              <tr>
+                <td><a href="" class="text-white">Request Document</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- end navbar for left side -->
+        </div>
+        <div class="col-sm-9">
+          <!-- navbar -->
+          <!-- fixed-top -->
+        <div class="row">
+          <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-info ">
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarExample01" aria-controls="navbarExample01"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarExample01">
+                    <div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">Electronic Document Dashboard</a></div>
+                 <ul class="navbar-nav ms-auto mb-0 mb-lg-0 py-2">
+                     <li class="float-sm-start ">
+                        <a href="#"> Welcome {{ user.first_name }}</a>
+                     </li>
+                     <li>
+                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     </li>
+                    <li class="nav-item active">
+                       <!-- Facebook -->
+                    <a
+                      class="btn btn-primary btn-floating m-1"
+                      style="background-color: #3b5998;"
+                      href="#!"
+                      role="button"
+                      ><i class="fab fa-facebook-f"></i
+                    >Facebook</a>
+                    </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li class="nav-item">
+                      <!-- Twitter -->
+                    <a
+                      class="btn btn-primary btn-floating m-1"
+                      style="background-color: #55acee;"
+                      href="#!"
+                      role="button"
+                      ><i class="fab fa-twitter"></i
+                    >Twitter</a>
+                    </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li class="nav-item">
+                      <!-- Instagram -->
+                    <a
+                      class="btn btn-primary btn-floating m-1"
+                      style="background-color: #ac2bac;"
+                      href="#!"
+                      role="button"
+                      ><i class="fab fa-instagram"></i
+                    >Instagram</a>
+                    </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li class="nav-item">
+                      
+                    <!-- Linkedin -->
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;"
+                      href="#!"
+                      role="button"
+                      ><i class="fab fa-linkedin-in"></i
+                    >LinkedIn</a>
+                    </li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <li class="nav-item">
+                      <button class="btn btn-warning btn-sm"><a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></button>
+                    </li>
+                  </ul>
+                </div>
+            </nav>
+          
+          </div>
+        </div>
+        <!-- End navbar -->
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-outline">
+            <div class="bg-image">
+                <!-- https://mdbootstrap.com/img/new/standard/city/053.jpg -->
+              <img src="{% static 'dashboard/img/img1.jpg' %}"
+                class="w-100"
+                alt="Sample"
+              />
+              <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                  <p class="text-white mb-0">
+                    Information technology has make it possible to request some of the services via online rather
+                    than pysical contact
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+          
+        </div>
+      </div>
+
+      <!-- MODALS -->
+        <!-- Modal for personal informations -->
+        <div
+          class="modal fade right"
+          id="exampleSideModal2"
+          data-bs-backdrop="static"
+          tabindex="-1"
+          aria-labelledby="exampleSideModal1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-side modal-top-right">
+            <div class="modal-content">
+              <div class="modal-header bg-info text-white">
+                <h5 class="modal-title" id="exampleSideModal2">{{user.first_name}} Informations</h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white"
+                  data-mdb-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <form>
+                        {% csrf_token %}
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col" colspan="2">Labels</th>
+                              <th scope="col">Information</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row" colspan="2">Registration Number:</th>
+                              <td>{{ rand }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="row" colspan="2">First Name:</th>
+                              <td>{{ student.first_name }}</td>
+                            </tr>
+                          <tr>
+                              <th scope="row" colspan="2">Last Name:</th>
+                              <td>{{ student.first_last }}</td>
+                            </tr>
+                          <tr>
+                              <th scope="row" colspan="2">Gender:</th>
+                              <td>{{ user.username }}</td>
+                            </tr>
+                          <tr>
+                              <th scope="row" colspan="2">Email:</th>
+                              <td>{{ user.email }}</td>
+                            </tr>
+                          <tr>
+                              <th scope="row" colspan="2">Date of Birth</th>
+                              <td>{{ user.username }}</td>
+                            </tr>
+                          <tr>
+                              <th scope="row" colspan="2">National ID</th>
+                              <td>{{ user.username }}</td>
+                            </tr>
+                          <tr>
+                              <th scope="row" colspan="2">Department</th>
+                              <td>{{ user.username }}</td>
+                            </tr>
+                          <tr>
+                              <th scope="row" colspan="2">Academic Year</th>
+                              <td>{{ user.username }}</td>
+                            </tr>
+                          <tr>
+                              <th scope="row" colspan="2">Profile Picture</th>
+                              <td>{{ user.username }}</td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+
+
+                      <!-- Submit button -->
+                      <button type="button" data-mdb-toggle="modal" data-mdb-target="#exampleSideModal1"
+                              class="btn btn-primary btn-block mb-4">Update Your Info</button>
+                    </form>
+                  </div>
+                  <div class="col-sm-2">
+
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer bg-info">
+                <div class="row">
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-10">
+                    <p> The privacy of your information is our Concern</p>
+                  </div>
+                  <div class="col-sm-1"></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of View modal -->
+      <!-- Modal for Update personal informations -->
+        <div
+          class="modal fade right"
+          id="exampleSideModal1"
+          data-bs-backdrop="static"
+          tabindex="-1"
+          aria-labelledby="exampleSideModal1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-side modal-top-right">
+            <div class="modal-content">
+              <div class="modal-header bg-info text-white">
+                <h5 class="modal-title" id="exampleSideModal1" >{{user.username }} Informations</h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white"
+                  data-mdb-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-sm-2">
+                    
+                  </div>
+                  <div class="col-sm-8">
+                    <form>
+                        {% csrf_token %}
+                      <!-- 2 column grid layout with text inputs for the first and last names -->
+                      <div class="row mb-4">
+                        <div class="col">
+                          <div class="form-outline">
+                            <input type="text" id="form3Example1" class="form-control" />
+                            <label class="form-label" for="form3Example1">First name</label>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="form-outline">
+                            <input type="text" id="form3Example2" class="form-control" />
+                            <label class="form-label" for="form3Example2">Last name</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Email input -->
+                      <div class="form-outline mb-4">
+                        <input type="email" id="form3Example3" class="form-control" />
+                        <label class="form-label" for="form3Example3">Email address</label>
+                      </div>
+
+                      <!-- Registration Number input -->
+                      <div class="form-outline mb-4">
+                        <input type="number" id="reg" class="form-control" max="9" />
+                        <label class="form-label" for="reg">Registration Number</label>
+                      </div>
+                      <!-- ID input -->
+                      <div class="form-outline mb-4">
+                        <input type="number" id="id" class="form-control" maxlength="16" />
+                        <label class="form-label" for="id">ID Number</label>
+                      </div>
+                      <!-- Department input -->
+                      <div class="form-outline mb-4">
+                        <input type="text" id="dp" class="form-control" />
+                        <label class="form-label" for="dp">Department</label>
+                      </div>
+
+                        <!--  Gender  -->
+                        <label class="form" for="id">Gender:</label><br>
+                    <div class="form-check form-check-inline">
+
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="inlineRadio2"
+                        value="option2"
+                      />
+                      <label class="form-check-label" for="inlineRadio2">Male</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="inlineRadioOptions"
+                        id="inlineRadio3"
+                        value="option3"
+                      />
+                        <label class="form-check-label" for="inlineRadio3">Female</label>
+                    </div> <br /><br />
+                        <!--  end of gender-->
+                        <!--  date of birth-->
+                        <div class="form-float mb-4">
+                            <label class="form" for="id">Date Of Birth:</label>
+                        <input type="date" id="id" class="form-control" maxlength="16" name="dob" />
+
+                      </div>
+                        <!--  end of date of birth-->
+                        <!-- Profile picture -->
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="reg"> Profile pictures:</label> <br>
+                        <input type="file" id="reg" class="form-control"  />
+                      </div>
+
+                         <!-- Academic calendar -->
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="reg"> Academic Calendar:</label> <br>
+                        <input type="text" id="reg" class="form-control" placeholder="ex: 2010/2011" />
+                      </div>
+
+                      <!-- Submit button -->
+                        <br />
+                        <hr>
+                      <button type="reset" class="btn btn-primary btn-block mb-4">Clear Content</button>
+                      <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+                    </form>
+                  </div>
+                  <div class="col-sm-2">
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer bg-info">
+                <div class="row">
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-10">
+                    <p> The privacy of your information is our Concern</p>
+                  </div>
+                  <div class="col-sm-1"></div>  
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of modal -->
+
+          <!-- Modal for transcript -->
+        <div
+          class="modal fade right"
+          id="exampleSideModal3"
+          data-bs-backdrop="static"
+          tabindex="-1"
+          aria-labelledby="exampleSideModal1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-side modal-top-right">
+            <div class="modal-content">
+              <div class="modal-header bg-info text-white">
+                <h5 class="modal-title" id="exampleSideModal3">{{ Marks.student_reg }} Transcript</h5>
+                <button
+                  type="button"
+                  class="btn-close btn-close-white"
+                  data-mdb-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <form>
+                        {% csrf_token %}
+                      <table class="table">
+                          <tr>
+                              <td>{{ Marks.module_code }} </td>
+                              <td> {{ Marks.marks }} </td>
+                              <td>{{ Marks.grade }} </td>
+                          </tr>
+                        </table>
+
+
+                      <!-- Submit button -->
+                      <button type="button" data-mdb-toggle="modal" data-mdb-target="#exampleSideModal1"
+                              class="btn btn-primary btn-block mb-4">Update Your Info</button>
+                    </form>
+                  </div>
+                  <div class="col-sm-2">
+
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer bg-info">
+                <div class="row">
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-10">
+                    <p> The privacy of your information is our Concern</p>
+                  </div>
+                  <div class="col-sm-1"></div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of transcript modal -->
+
+        <div class="row">
+          <div class="col-sm-12">
+            <footer class="bg-light text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #55acee;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #dd4b39;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn btn-primary btn-floating m-1"
+        style="background-color: #333333;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+          </div>
+        </div>
+    </div>
+    <!-- End your project here-->
+
+    <!-- MDB -->
+    <script type="text/javascript" src="{% static 'dashboard/js/mdb.min.js' %}"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>
+
+

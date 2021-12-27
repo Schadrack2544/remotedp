@@ -137,6 +137,7 @@ class Module(models.Model):
 class Marks(models.Model):
     student_reg = models.ForeignKey(Student, on_delete=models.CASCADE, related_name="set_student_mark")
     module_code = models.ForeignKey(Module, on_delete=models.CASCADE, related_name="set_module_code")
+    module_name = models.CharField(max_length=100)
     marks = models.IntegerField()
     grade = models.CharField(max_length=1)
     semester_marks = models.ForeignKey(Semester, on_delete=models.CASCADE, related_name='semester_marks', default=0)
@@ -165,3 +166,15 @@ class Transcript(models.Model):
 
     class Meta:
         app_label = 'Academic'
+class Payment(models.Model):
+    payment_invoice_number=models.CharField(max_length=255,primary_key=True)
+    student_reg = models.ForeignKey(Student, on_delete=models.CASCADE, related_name="studen_reg_number")
+    amount_due = models.IntegerField(default=5000)
+    level = models.CharField(max_length=10)
+    is_paid = models.BooleanField(default=True)
+    
+    
+class payment_Order(models.Model):
+    txn_id = models.CharField(max_length=12,primary_key=True)
+    student_reg=models.ForeignKey(Student, on_delete=models.CASCADE)
+    payment_invoice_number = models.ForeignKey(Payment, on_delete=models.CASCADE)

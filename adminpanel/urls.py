@@ -17,11 +17,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('personal_info/', views.personal_info, name='personal_info'),
-    path('logout/', views.logout, name='logout'),
-    path('dashboard/', views.dashboard, name='dashboard'),
-    path('login_success/', views.login_success, name='login_success'),
-    path('register/', views.register, name='register'),
-    path('login/', views.login, name='login'),
-    path('', views.home, name='home')
+    path('', views.index, name='homeadminpanel'),
+    path('addstudent',views.add_student, name='addstudent'),
+    path('addmarks', views.add_Student_Mark,name='addmarks')
+    
 ]

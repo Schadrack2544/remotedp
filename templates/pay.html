@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/styles/home.css' %}">
+   
+    <title>Pay</title>
+    <style>
+        .pay-form{
+            height: auto;
+            width: 60vw;
+            margin: 80px auto;
+            padding:20px;
+            background-color:antiquewhite;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="pay-form">
+        <h2>Pay for your transcript</h2>
+       <form action="{% url 'pay' %}" method="post">
+           {%csrf_token%}
+        <input type="text" name="phone" id="phone" placeholder="Enter phone number" class="form-control"><br>
+        <input type="nmber" name="reg_number" class="form-control"><br>
+        <input type="submit" value="Send" id='send' name='send' class="btn btn-success">
+       </form>  
+    </div>
+    <script>
+        const sendNumberTopay=()=>{
+           
+            alert('We can pay now.')
+            let numberToPay = document.querySelector(".numberToPay").value;
+            console.log("Phone number"+numberToPay)
+
+        }
+
+    </script>
+</body>
+</html>

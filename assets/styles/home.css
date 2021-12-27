@@ -1,10 +1,10 @@
-#background_image{
+#bg_image{
         background-image: url(images/img5.jpg);
         background-size: cover;
         min-height: 800px;
         background-repeat: no-repeat;
        }
 
- . modal-body bg-secondary{
+ .modal-body bg-secondary{
 	background-color: rgb(200, 226, 232);
 }

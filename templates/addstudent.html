@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/styles/home.css' %}">
+    <!-- Google Fonts Roboto -->
+    
+    <title></title>
+</head>
+<body class="bg-info">
+    <div class=addstudent-form>
+        <form action="addtudent" method="post">
+      {% csrf_token %}
+       <input type="text" name="student_reg" id="student-reg" class="form-control" placeholder="Enter registration">
+       <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Enter first name">
+       <input type="text" name="last_name" id="last_name" placeholder="Enter last name">
+       <input type="text" name="email" id="email" class="form-control" placeholder="Enter email">
+       <input type="file" name="profile" id="profile">
+       <select name="gender" id="gender">
+         <option value="M">Male</option>
+         <option value="F">Female</option>
+       </select>
+       <input type="text" name="date_of_birth" id="date_of_birth">
+       <input type="text" name="national_id" id="national_id" minlength="16">
+       <input type="text" name="year_academic" id="year_academic">
+       <input type="text" name="department" id="department">
+       <input type="submit" value="Add" class="btn btn-succes">
+       </form> 
+    </div>  
+</body>
+</html>

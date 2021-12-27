@@ -1,8 +1,7 @@
-l
-  <!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
-      {% load static %}
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +43,7 @@ l
       <div class="row">
           <img src="{% static 'images/img5.jpg' %}" id="bg_image" height="100%" width="100%">
       <div class="col-sm-4 well">
-          if there is any one
+         
       </div>
       <div class="col-sm-4">
 
@@ -64,12 +63,12 @@ l
                           <form action="{% url 'login' %}" method="post">
                             {% csrf_token %}
                             <div class="form-floating mb-3 ">
-                            <input type="text" class="form-control" id="reg_number" name="username" placeholder="21800000" value="{{ form.username}}">
+                            <input type="text" class="form-control" id="reg_number" name="username" placeholder="Enter your email address">
                             <label for="reg_number">Username</label>
                           </div>
 
                           <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="pin" name="password" placeholder="name@example.com" value="{{ form.password}}">
+                            <input type="password" class="form-control" id="pin" name="password" placeholder="name@example.com">
                             <label for="pin">Password</label>
                           </div>
 
@@ -84,6 +83,9 @@ l
                             <div class="col-sm-3"></div>
                           </div>
                                  <br>
+                                 {% for message in messages%}
+                                 <h3> {{ messages }}</h3>
+                                 {% endfor %}
                           </form>
                         </div>
                     </div>
@@ -139,6 +141,11 @@ l
                                 <div class="col-sm-3"></div>
                               </div>
                                  <br>
+                                 <div>
+                                  {% for message in messages%}
+                                  <h3> {{ messages }}</h3>
+                                  {% endfor %}
+                              </div>
                           </form>
                         </div>
                     </div>
